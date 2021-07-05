@@ -1,10 +1,10 @@
 # Mimicking AWS with Localstack and SAM
 
-When prototyping new projects that are intended to work with AWS services, it&rsquo;s useful to have an option for testing how the new project interacts with the AWS API without needing to provision actual AWS resources. These services can be costly if not deleted after testing is complete, and in a well-managed and highly-regulated environment, provisioning these resources in the first place may be too time-consuming for what is supposed to be a rapid prototype.
+When prototyping new projects that are intended to work with AWS services, it&rsquo;s useful to have an option for testing how the new project interacts with the AWS API without needing to provision actual AWS resources. These services can be costly if not deleted after testing is complete, and in a well-managed and highly-regulated environment provisioning these resources in the first place may be too time-consuming for what is supposed to be a rapid prototype.
 
 Localstack and AWS SAM help alleviate this burden by allowing us to mock AWS resources via Docker. This means all testing is contained locally and cleanup is as easy as shutting down a couple of docker containers.
 
-There are a multitude of free offerings available for testing interactions with AWS, but these two in particular are useful because they offer near-seamless interoperability. This project contains a lambda which uploads a file to S3, and a simple acceptance test suite that verifies its behavior. Other than some environment-specific configuration (which is very minimal), the code that is executing is identical between our local machine and what will actually be deployed in AWS.
+There are a multitude of free offerings available for testing interactions with AWS, but these two in particular are useful because they offer near-seamless interoperability. This project contains a lambda which uploads a file to S3 and a simple acceptance test suite that verifies its behavior. Other than some environment-specific configuration (which is very minimal), both the code of the lambda and the code of the test suite are identical between what runs locally and what will be deployed in AWS.
 
 ## Prerequisites
 
